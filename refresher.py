@@ -28,25 +28,22 @@ print(driver.page_source)
 #driver.quit()
 
 
+### HTML parser
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+#WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//div[@class='modal-footer']//button[@Class='btn btn-danger x' and text()='Maybe Later']"))).click()
+
+WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//button[@Class='ReservationButton Button Button--primary']"))).click()
+
+<button class="ReservationButton Button Button--primary" type="button" id="rgs://resy/7104/1781796/2/2022-07-26/2022-07-26/19:30:00/2/Dining Room"><div class="ReservationButton__time">7:30PM</div><div class="ReservationButton__type">Dining Room</div></button>
+
+### this is an attempt to trap the request and debug the error produced above. 
 for request in driver.requests:
   print(request.url) # <--------------- Request url
   print(request.headers) # <----------- Request headers
   print(request.response.headers) # <-- Response headers
-
-
-### HTML parser
-
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
-
-# #WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//div[@class='modal-footer']//button[@Class='btn btn-danger x' and text()='Maybe Later']"))).click()
-
-# WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//button[@Class='ReservationButton Button Button--primary']"))).click()
-
-#<button class="ReservationButton Button Button--primary" type="button" id="rgs://resy/7104/1781796/2/2022-07-26/2022-07-26/19:30:00/2/Dining Room"><div class="ReservationButton__time">7:30PM</div><div class="ReservationButton__type">Dining Room</div></button>
-
-
 
 
 
