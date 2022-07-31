@@ -2,15 +2,12 @@
 
 import numpy
 import scipy
-
 import selenium
-
 
 
 DRIVER_PATH = '/usr/local/bin/chromedriver'
 # driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 # driver.get('https://google.com')
-
 
 
 ### Generate headless browser
